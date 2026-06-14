@@ -35,14 +35,7 @@ pipeline {
                 '''
             }
         }
-        stage('QA') {
-            steps {
-                withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonar-cred') {
-                    sh '''
-                        cd FlightReservationApplication
-                        ${MAVEN_HOME}/bin/mvn sonar:sonar -Dsonar.projectKey=flight-reservation-app
-                    '''
-                }
+       // stage('SonarQube Analysis') {
             }
         }
         stage('Quality Gate') {
