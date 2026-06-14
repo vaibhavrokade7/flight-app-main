@@ -2,19 +2,19 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_REGISTRY = 'docker.io/shubhamkalsait1'
+        DOCKER_REGISTRY = 'docker.io/vaibhavrokade7'
         DOCKER_IMAGE_NAME = 'flight-reservation-app'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
         MAVEN_HOME = tool 'Maven'
         JAVA_HOME = tool 'JDK17'
-        SONAR_HOST_URL = 'http://3.9.176.140:9000'
+        //SONAR_HOST_URL = 'http://3.9.176.140:9000'
        // SONAR_TOKEN = credentials('sonar-cred')
     }
     
     stages {
         stage('PULL') {
             steps {
-                git branch: 'main', url: 'https://github.com/shubhamkalsait/Flight-reservation.git'
+                git branch: 'main', url: 'https://github.com/vaibhavrokade7/flight-app.git'
             }
         }
         
